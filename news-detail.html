@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News API Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar obj-width">
+            <a class="logo" href="index.html">News Blog .</a>
+            <div class="search-container">
+                <input type="text" 
+                placeholder="Enter news ID..."
+                id="news-id" 
+                name="news-id"
+                class="news-id">
+                <button id="search-button">
+                    Search
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        
+        <div id="news-details" class="single-blog-card"></div>
+
+        <div id="image-slider"></div>
+
+        <div class="form-mt">
+            <h1>Comments</h1>
+            <div id="comments-section"></div>
+        </div>
+
+        <form id="comment-form">
+            <div class="form-container">  
+                <div class="form-m">
+                    <input type="text" id="comment-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-m">
+                    <textarea id="comment-content" placeholder="Your Comment" required></textarea>
+                </div>
+                <button type="submit"class="submitBtn">Submit Comment</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="newsdetails.js"></script>
+</body>
+</html>

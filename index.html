@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News API Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar obj-width">
+            <a class="logo" href="index.html">News Blog .</a>
+            <div class="search-container m-hide">
+                <input type="text" 
+                    placeholder="Enter news ID..."
+                    id="news-id" 
+                    name="news-id"
+                >
+                <button id="search-button">
+                    Search
+                </button>
+            </div>
+            <a href="admin-login.html"><button id="login-button">
+                Admin Login
+            </button></a>
+        </div>
+    </nav>
+
+    <div id="news-details" class="news-details">
+        <!-- News details will be displayed here -->
+    </div>
+
+    <main id="blog-container" class="container">
+       
+    </main>
+    
+
+    <div id="pagination">
+        <button id="prev" class="previewBtn">Back</button>
+        <button id="next" class="previewBtn">Next</button>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

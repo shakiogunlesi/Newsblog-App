@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News API Blog</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <nav>
+            <div class="navbar obj-width">
+                <a class="logo" href="index.html">News Blog .</a>
+                <div class="search-container">
+                    <input type="text" 
+                    placeholder="Enter news ID..."
+                    id="news-id" 
+                    name="news-id">
+                    <button id="search-button">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Add News Form -->
+        <div class="container">
+
+            <!-- <div class="search-container">
+                <input type="text" 
+                    placeholder="Enter news ID..."
+                    id="news-id" 
+                    name="news-id"
+                >
+                 <button id="delete-button">Delete News</button>
+            </div> -->
+        
+            <div id="news-detail-container"></div>
+            <div class="form-m">
+                <h1>Add News</h1>
+            </div>
+            <form id="news-form" enctype="multipart/form-data">
+                <div class="form-container"> 
+                    <div class="form-m">
+                        <input type="text" id="news-title" placeholder="Title" required>
+                    </div>
+                    <div class="form-m">
+                        <input type="text" id="news-author" placeholder="Author" required>
+                    </div>
+                    <div class="form-m">
+                        <input type="url" id="news-url" placeholder="URL" required>
+                    </div>
+                    <div class="form-m">
+                        <input type="file" id="news-image" placeholder="uploadimage" accept="image/*">
+                    </div>
+                    <button type="submit">Add News</button>
+                </div>
+            </form>
+            
+            <div id="image-slider"></div>
+            
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
