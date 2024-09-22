@@ -4,7 +4,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const limit = 12;
     let allNews = []; // Store all news for search
     const blogContainer = document.getElementById('blog-container');
-    const searchInput = document.querySelector('.searchInputClass'); // Fix: use querySelector for class
+
+    // Desktop Search Inputs
+    const desktopSearchInput = document.querySelector('.desktopSearchInput');
+    const desktopSearchButton = document.querySelector('.desktopSearchButton');
+    
+    // Mobile Search Inputs
+    const mobileSearchInput = document.querySelector('.mobileSearchInput');
+    const mobileSearchButton = document.querySelector('.mobileSearchButton');
 
     // Fetch paginated news (12 per page)
     async function fetchNews(page = 1) {
@@ -62,11 +69,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Search functionality - Filter as the user types
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.trim();
-        displayNews(allNews, query); // Filter through all fetched news immediately
-    });
+    // Search functionality - Filter as the user types (for desktop and mobile)
+    if (desktopSearchInput && desktopSearchButton) {
+        desktopSearchInput.addEventListener('input', () => {
+            const query = desktopSearchInput.value.trim();
+            displayNews(allNews, query); // Filter through all fetched news immediately
+        });
+    }
+
+    if (mobileSearchInput && mobileSearchButton) {
+        mobileSearchInput.addEventListener('input', () => {
+            const query = mobileSearchInput.value.trim();
+            displayNews(allNews, query); // Filter through all fetched news immediately
+        });
+    }
 
     // Pagination functionality (for default display of paginated news)
     const nextButton = document.getElementById('next');

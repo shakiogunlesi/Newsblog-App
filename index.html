@@ -10,12 +10,13 @@
     <nav>
         <div class="navbar obj-width">
             <a class="logo" href="index.html">News Blog .</a>
-            <div class="search-container m-hide">
+            <!-- Desktop Search Input -->
+            <div class="search-container desktop-search m-hide">
                 <input type="text" 
                     placeholder="Enter news ID..."
-                    class="searchInputClass" 
+                    class="desktopSearchInput" 
                 >
-                <button class="searchButtonClass">
+                <button class="desktopSearchButton">
                     Search
                 </button>
             </div>
@@ -26,12 +27,13 @@
     </nav>
 
     <div class="container">
-        <div class="search-container m-hide2">
+        <!-- Mobile Search Input -->
+        <div class="search-container mobile-search m-hide2">
             <input type="text" 
                 placeholder="Enter news ID..."
-                class="searchInputClass"
+                class="mobileSearchInput"
             >
-            <button class="searchButtonClass">
+            <button class="mobileSearchButton">
                 Search
             </button>
         </div>
@@ -43,12 +45,10 @@
        
     </main>
     
-
     <div id="pagination">
         <button id="prev" class="previewBtn">Back</button>
         <button id="next" class="previewBtn">Next</button>
     </div>
-    
 
     <script src="script.js"></script>
 </body>

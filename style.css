@@ -51,7 +51,7 @@ button {
     font-size: 2.2rem;
 }
 
-.searchInputClass {
+.desktopSearchInput {
     width: 400px!important;
     padding: 10px 20px;
     border: none;
@@ -60,7 +60,27 @@ button {
     color: #3e3c3c;
 }
 
-.searchButtonClass {
+.desktopSearchButton {
+    padding: 10px 20px;
+    background-color: #7d53de;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.mobileSearchInput {
+    width: 400px!important;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #3e3c3c;
+}
+
+.mobileSearchButton{
     padding: 10px 20px;
     background-color: #7d53de;
     color: #fff;
@@ -291,14 +311,27 @@ input {
         font-size: 1.5rem;
     }
 
-    .searchInputClass {
+    .desktopSearchInput {
         width: 230px!important;
         border: 1px solid #7d7c7c;
         border-radius: 5px;
         padding: 10px 10px;
     }
 
-    .searchButtonClass {
+    .desktopSearchButton {
+        padding: 10px 10px;
+        font-size: 15px;
+        margin-left: 3px;
+    }
+
+    .mobileSearchInput {
+        width: 230px!important;
+        border: 1px solid #7d7c7c;
+        border-radius: 5px;
+        padding: 10px 10px;
+    }
+
+    .mobileSearchButton {
         padding: 10px 10px;
         font-size: 15px;
         margin-left: 3px;
