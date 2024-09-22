@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newsData),
-            }); // Make sure this closing brace is correct!
+            }); 
 
             if (response.ok) {
                 const addedNews = await response.json();
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Error:', error);
-        } // Ensure this closing brace is not extra or misplaced
-    } // Check if this is where the error occurs!
+        } 
+    } 
 
     // Update existing news item and update DOM
     async function updateNewsItem(newsId, updatedNewsData, imageFile) {

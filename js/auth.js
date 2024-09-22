@@ -1,4 +1,4 @@
-// Replace these with the actual credentials for admin login
+// Credentials for admin login
 const adminCredentials = {
     username: "admin",
     password: "password123"
