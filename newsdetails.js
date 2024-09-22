@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newsDetails = document.getElementById('news-details');
         if (newsDetails) {
             newsDetails.innerHTML = `
-                <img src="${news.avatar}" alt="news image" onerror="this.src='https://via.placeholder.com/320?text=No+Image'">
+                <img src="${news.avatar}" alt="news image" onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
                 <h1>${news.title}</h1>
                 <p>Author: ${news.author}</p>
                 <p>URL: <a href="${news.url}" target="_blank">${news.url}</a></p>
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add default image if no images are provided
         if (images.length === 0) {
             const defaultImage = document.createElement('img');
-            defaultImage.src = 'https://dummyimage.com/320x240/cccccc/000000&text=No+Image';
+            defaultImage.src = 'https://dummyimage.com/300x240/cccccc/000000&text=No+Image';
             defaultImage.alt = 'Default News Image';
             slidesContainer.appendChild(defaultImage);
             console.log('No images available. Displaying default image.');
