@@ -5,28 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>News API Blog</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     <body>
         <nav>
             <div class="navbar obj-width">
-                <a class="logo" href="index.html">News Blog .</a>
-                <div class="search-container m-hide">
-                    <input type="text" 
-                        placeholder="Enter news ID..."
-                        id="news-id" 
-                        name="news-id"
-                    >
-                    <button id="search-button">
-                        Search
-                    </button>
-                </div>
-                <button id="login-button">
-                    Logout
-                </button>
+                <a class="logo" href="#">News Blog .</a>
+                
+                <a href="admin-login.html"><button id="login-button">
+                    Admin Login
+                </button></a>
             </div>
         </nav>
         <div class="admin-login">
-            
             <form id="loginForm">
                 <div class="login-text">
                     <h2>Admin Login</h2>
@@ -39,13 +30,15 @@
                     <div class="form-m">
                         <input type="text" id="username" placeholder="Username" required>
                     </div>
-                    <div class="form-m">
+                    <div class="form-m password-container">
                         <input type="password" id="password" placeholder="Password" required>
+                        <i class="fas fa-eye toggle-password" id="togglePassword"></i>
                     </div>
                     <button type="submit">Login</button>
                 </div>
             </form>
         </div>
+        
         <script src="auth.js"></script>
     </body>
 </html>

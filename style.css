@@ -51,16 +51,16 @@ button {
     font-size: 2.2rem;
 }
 
-#news-id {
+.searchInputClass {
     width: 400px!important;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 18px;
-    color: #ccc;
+    color: #3e3c3c;
 }
 
-#search-button {
+.searchButtonClass {
     padding: 10px 20px;
     background-color: #7d53de;
     color: #fff;
@@ -238,6 +238,46 @@ input {
     display: block;
 }
 
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100%;
+    flex: 0 0 100%; /* Make each image take full width */
+}
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    cursor: pointer;
+    margin-left: -30px; /* Adjust to align with the input */
+}
+
+.m-hide2 {
+    display: none;
+}
+
 @media (max-width: 500px) { 
     .container {
         max-width: 100%;
@@ -251,12 +291,14 @@ input {
         font-size: 1.5rem;
     }
 
-    #news-id {
-        max-width: 120px;
+    .searchInputClass {
+        width: 260px!important;
+        border: 1px solid #7d7c7c;
+        border-radius: 5px;
         padding: 10px 10px;
     }
 
-    #search-button {
+    .searchButtonClass {
         padding: 10px 10px;
         font-size: 15px;
         margin-left: 3px;
@@ -264,7 +306,7 @@ input {
 
     .blog-card {
         width: 100%;
-        margin: 0!important;
+        margin: 10px 0!important;
     }
 
     .form-mt {
@@ -273,6 +315,10 @@ input {
 
     .m-hide {
         display: none;
+    }
+
+    .m-hide2 {
+        display: block;
     }
 }
 

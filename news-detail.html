@@ -10,23 +10,24 @@
     <nav>
         <div class="navbar obj-width">
             <a class="logo" href="index.html">News Blog .</a>
-            <div class="search-container">
-                <input type="text" 
-                placeholder="Enter news ID..."
-                id="news-id" 
-                name="news-id"
-                class="news-id">
-                <button id="search-button">
-                    Search
-                </button>
-            </div>
+            
+            <a href="admin-login.html"><button id="login-button">
+                Admin Login
+            </button></a>
         </div>
     </nav>
     <div class="container">
         
         <div id="news-details" class="single-blog-card"></div>
 
-        <div id="image-slider"></div>
+        <div class="image-slider">
+            <div class="slides">
+                <!-- Images will be inserted here dynamically -->
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>        
+        
 
         <div class="form-mt">
             <h1>Comments</h1>

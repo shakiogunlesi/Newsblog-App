@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const baseUrl = 'https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1';
-
-    // Track the current comment being edited (null if adding a new one)
     let currentEditingCommentId = null;
+    let currentSlide = 0;
 
-    // Fetch detailed news by ID
     const urlParams = new URLSearchParams(window.location.search);
-    const newsId = urlParams.get('id'); // Get the news ID from the URL
+    const newsId = urlParams.get('id');
 
     if (newsId) {
         fetchNewsDetail(newsId);
@@ -21,13 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const commentsResponse = await fetch(`${baseUrl}/news/${newsId}/comments`);
             const comments = await commentsResponse.json();
 
-            console.log('Comments API response:', comments);
             if (Array.isArray(comments)) {
                 displayComments(comments);
             } else {
-                console.error('Expected an array for comments but received:', comments);
                 displayNoComments();
             }
+
+            const imageResponse = await fetch(`${baseUrl}/news/${newsId}/images`);
+            const images = await imageResponse.json();
+            loadImages(images.map(img => img.url));
         } catch (error) {
             console.error('Error fetching news details:', error);
         }
@@ -44,6 +44,47 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
     }
+
+    function changeSlide(direction) {
+        const slides = document.querySelectorAll('.slides img');
+        if (slides.length === 0) return;
+
+        currentSlide += direction;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        } else if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        const slidesContainer = document.querySelector('.slides');
+        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function loadImages(images) {
+        const slidesContainer = document.querySelector('.slides');
+        slidesContainer.innerHTML = '';
+
+        // Add default image if no images are provided
+        if (images.length === 0) {
+            const defaultImage = document.createElement('img');
+            defaultImage.src = 'https://dummyimage.com/320x240/cccccc/000000&text=No+Image';
+            defaultImage.alt = 'Default News Image';
+            slidesContainer.appendChild(defaultImage);
+            console.log('No images available. Displaying default image.');
+        } else {
+            images.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imgElement.alt = 'News Image';
+                slidesContainer.appendChild(imgElement);
+            });
+        }
+
+        currentSlide = 0;
+        changeSlide(0);
+    }
+
 
     function displayComments(comments) {
         const commentsSection = document.getElementById('comments-section');
